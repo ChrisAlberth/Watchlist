@@ -1,0 +1,37 @@
+import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
+import noImage from '../utils/no-image-available.png';
+import '../styles/Card.css';
+
+import { faStar as faStarSolid } from '@fortawesome/free-solid-svg-icons';
+import { faStar as faStarRegular } from '@fortawesome/free-regular-svg-icons';
+
+const Card = ({ image, title, addFavorite, isFavorite }) => {
+  return (
+    <div className='card'>
+      <div className='icon' onClick={addFavorite}>
+        {isFavorite ? (
+          <i>
+            <FontAwesomeIcon icon={faStarSolid} color='white' size='1x' />
+          </i>
+        ) : (
+          <i>
+            <FontAwesomeIcon icon={faStarRegular} color='white' size='1x' />
+          </i>
+        )}
+      </div>
+      {image === 'N/A' ? (
+        <img src={noImage} alt={title} />
+      ) : (
+        <img src={image} alt={title} />
+      )}
+
+      <div className='info'>
+        <span className='title'>{title}</span>
+      </div>
+    </div>
+  );
+};
+
+export default Card;

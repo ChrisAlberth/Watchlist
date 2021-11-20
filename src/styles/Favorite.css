@@ -1,0 +1,14 @@
+.favorites {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.favorite_warning {
+  margin: 50px 0;
+  color: black;
+  font-size: 32px;
+  font-weight: 600;
+  font-family: 'Sen', sans-serif;
+  text-align: center;
+}
